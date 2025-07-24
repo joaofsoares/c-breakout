@@ -1,13 +1,8 @@
-#include <raylib.h>
+#include "raylib.h"
 #include <stdio.h>
 
 typedef struct {
-  int x;
-  int y;
-} Position;
-
-typedef struct {
-  Position pos;
+  Vector2 pos;
   int width;
   int height;
   Color color;
@@ -20,7 +15,7 @@ typedef struct {
 } Ball;
 
 typedef struct {
-  Position pos;
+  Vector2 pos;
   int width;
   int height;
   Color color;
@@ -207,7 +202,7 @@ int main(void) {
        LIGHTGRAY,
        true}};
 
-  Bar bar = {{WIDTH / 2 - 50, HEIGHT - 100}, 100, 20, GREEN};
+  Bar bar = {{(float)WIDTH / 2 - 50, HEIGHT - 100}, 100, 20, GREEN};
 
   Ball ball = {{.x = ((float)WIDTH) / 2, .y = HEIGHT - 125}, 10, WHITE};
 
